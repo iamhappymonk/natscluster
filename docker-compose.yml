@@ -1,63 +1,61 @@
 version: '3.7'
 services:
-  n1:
-    container_name: n1
-    image: nats
-    restart: unless-stopped
-    networks:
-      - nats
-    ports:
-      - 4222:4222
-    volumes:
-      - ./jetstream-cluster/n1:/data
-      - ./n1_conf/nats-server.conf:/nats-server.conf
-     
+   n2:
+      container_name: n2
+      image: nats
+      restart: unless-stopped
+      networks:
+         - nats
+      ports:
+         - 4222:4222
+      volumes:
+         - ./jetstream-cluster/n2:/data
+         - ./n2_conf/nats-server.conf:/nats-server.conf
 
-  n2:
-    container_name: n2
-    image: nats
-    restart: unless-stopped
-    networks:
-      - nats
-    ports:
-      - 4223:4222
-    volumes:
-      - ./jetstream-cluster/n2:/data
-      - ./n2_conf/nats-server.conf:/nats-server.conf
+   n3:
+      container_name: n3
+      image: nats
+      restart: unless-stopped
+      networks:
+         - nats
+      ports:
+         - 4223:4222
+      volumes:
+         - ./jetstream-cluster/n3:/data
+         - ./n3_conf/nats-server.conf:/nats-server.conf
 
-  n3:
-    container_name: n3
-    image: nats
-    restart: unless-stopped
-    networks:
-      - nats
-    ports:
-      - 4224:4222
-    volumes:
-      - ./jetstream-cluster/n3:/data
-      - ./n3_conf/nats-server.conf:/nats-server.conf
-  n4:
-    container_name: n4
-    image: nats
-    restart: unless-stopped
-    networks:
-      - nats
-    ports:
-      - 4225:4222
-    volumes:
-      - ./jetstream-cluster/n4:/data
-      - ./n4_conf/nats-server.conf:/nats-server.conf
-  n5:
-    container_name: n5
-    image: nats
-    restart: unless-stopped
-    networks:
-      - nats
-    ports:
-      - 4226:4222
-    volumes:
-      - ./jetstream-cluster/n5:/data
-      - ./n5_conf/nats-server.conf:/nats-server.conf
+   n4:
+      container_name: n4
+      image: nats
+      restart: unless-stopped
+      networks:
+         - nats
+      ports:
+         - 4224:4222
+      volumes:
+         - ./jetstream-cluster/n4:/data
+         - ./n4_conf/nats-server.conf:/nats-server.conf
+   n5:
+      container_name: n5
+      image: nats
+      restart: unless-stopped
+      networks:
+         - nats
+      ports:
+         - 4225:4222
+      volumes:
+         - ./jetstream-cluster/n5:/data
+         - ./n5_conf/nats-server.conf:/nats-server.conf
+   n6:
+      container_name: n6
+      image: nats
+      restart: unless-stopped
+      networks:
+         - nats
+      ports:
+         - 4226:4222
+      volumes:
+         - ./jetstream-cluster/n6:/data
+         - ./n6_conf/nats-server.conf:/nats-server.conf
 networks:
-  nats: {}
-
+   nats: {}
